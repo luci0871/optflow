@@ -1,0 +1,27 @@
+{
+  "name": "dxc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "open": "parcel *.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && parcel index.html --open",
+    "build": "parcel build *.html  --public-url ./",
+    "deploy": "rm -rf dist/ && npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingimar-eyfjord/DXC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ingimar-eyfjord/DXC/issues"
+  },
+  "homepage": "https://github.com/ingimar-eyfjord/DXC#readme"
+}

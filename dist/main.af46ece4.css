@@ -1,0 +1,479 @@
+@font-face {
+  font-family: GT Walsheim Pro;
+  src: local("GT Walsheim Pro Regular"),local("GTWalsheimProRegular"),url(/658b3f94f94609ccf463d877708d7ef4.woff2) format("woff2"),url(/d461ce32e5a610961807b57eb13b68df.woff) format("woff"),url(/4ac8ba34f2b2284e7e60a3cea0f0c4f0.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: GT Walsheim Pro;
+  src: url("/fb7a8dbdc12c18bd5f83f38834f30ee7."),local("GTWalsheimProBold"),url(/a47a536eb990a8a8424da396b7b82e98.woff2) format("woff2"),url(/f9409e9698e65bed37533722e5ae8bd8.woff) format("woff"),url(/87ef4bf70015dcea2b4913e3fdc29102.ttf) format("truetype");
+  font-weight: 700;
+
+  font-style: normal
+}
+
+:root{
+--black: black;
+--white: white;
+--highlight: #f8ea4a;
+}
+html {
+  font-family: GT Walsheim Pro;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+body{
+    padding: 0;
+    margin: 0;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.flexRowColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.formBtn, [type="text"], [type="email"]{
+border: none;
+border-style: none;
+width: 100%;
+height: 2rem;
+font-weight: 600;
+margin-top: 1rem;
+}
+[type="text"], [type="email"]{
+    border: 2px;
+    border-style: solid;  
+    padding-top: 1.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;}
+
+.btn-success{
+    background-color: var(--highlight);
+}
+.btn-clear{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.persvassivehook{
+display: grid;
+grid-template-rows: 4rem 4rem 4rem;
+text-align: center;
+font-size: 2rem;
+font-weight: 800;
+margin-bottom: 8rem;
+text-transform: capitalize;
+}
+.persvassivehook > p{
+    margin-right: 0.8ex;
+}
+
+.formmodalbackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+height: 100%;
+width: 100%;
+background-color: gray;
+opacity: 0.2;
+z-index: 49;
+}
+
+.formmodal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+    background-color: white;
+    z-index: 50;
+    padding: 2rem;
+    width: 22vw;
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+}
+@media screen and (max-width: 1700px) {
+  .formmodal{
+    width: 25vw;}
+  }
+@media screen and (max-width: 1500px) {
+  .formmodal{
+    width: 30vw;}
+  }
+@media screen and (max-width: 1300px) {
+  .formmodal{
+  width: 40vw;}
+}
+@media screen and (max-width: 900px) {
+  .formmodal{
+  width: 55vw;}
+}
+/* ============  */
+/* down here is the css that is for the switch */
+
+
+  
+  .switch-wrap {
+    cursor: pointer;
+    background: var(--black);
+    padding: 0.2rem;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 6rem;
+  }
+  .switch-wrap input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch {
+    height:100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0fr 1fr 1fr;
+    transition: .2s;
+  }
+  .switch::after {
+    content: '';
+    border-radius: 50%;
+    background: #ccc;
+    grid-column: 2;
+    transition: background .2s;
+  }
+  
+  input:checked + .switch {
+    grid-template-columns: 1fr 1fr 0fr;
+  }
+  input:checked + .switch::after {
+    background-color: var(--highlight);
+  }
+
+  /* Here is the checkmark swithc css */
+ 
+  .toggle {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 24px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  .toggle:before {
+    content: "";
+    position: relative;
+    top: 1px;
+    left: 1px;
+    width: 40px;
+    height: 22px;
+    display: block;
+    background: black;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+  }
+  .toggle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+    transition: all 0.2s ease;
+  }
+  .toggle span svg {
+    margin: 7px;
+    fill: none;
+  }
+  .toggle span svg path {
+    stroke: black;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 0;
+    transition: all 0.5s linear;
+  }
+  #cbx:checked + .toggle:before {
+    background: var(--highlight);
+  }
+  #cbx:checked + .toggle span {
+    transform: translateX(18px);
+  }
+  #cbx:checked + .toggle span path {
+    stroke: var(--highlight);
+    stroke-dasharray: 25;
+    stroke-dashoffset: 25;
+  }
+  
+
+.hidden{
+  display: none;
+}
+/* >> checkbox */
+
+  .label-cbx {
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .label-cbx input:checked + .checkbox {
+    border-color: var(--highlight);
+  }
+  .label-cbx input:checked + .checkbox svg path {
+    fill:  var(--highlight);
+  }
+  .label-cbx input:checked + .checkbox svg polyline {
+    stroke-dashoffset: 0;
+  }
+  .label-cbx:hover .checkbox svg path {
+    stroke-dashoffset: 0;
+  }
+  .label-cbx .checkbox {
+    position: relative;
+    top: 2px;
+    float: left;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+  }
+  .label-cbx .checkbox svg {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+  }
+  .label-cbx .checkbox svg path {
+    fill: none;
+    stroke: var(--highlight);;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 71px;
+    stroke-dashoffset: 71px;
+    transition: all 0.6s ease;
+  }
+  .label-cbx .checkbox svg polyline {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+    transition: all 0.3s ease;
+  }
+  .label-cbx > span {
+    pointer-events: none;
+    vertical-align: middle;
+  }
+  
+  .invisible {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  fieldset{
+      border-style: none;
+  }
+  .cechboxlist{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      margin-bottom: 2rem;
+  }
+  .center{
+      display: grid;
+      grid-template-columns: 0.2fr 1fr;
+      grid-template-rows:0.5fr 0.5fr;
+  }
+  .center > p{
+margin: 0;}
+.center > a{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    grid-column: 2;}
+
+ .twocol{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 1rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+ }
+ .twocol > label:first-child{
+     grid-column: 1;
+     grid-row: 1;
+}
+ .twocol > input:nth-child(2){
+    grid-column: 1;
+    grid-row: 1;
+ }
+ .twocol > label:nth-child(3){
+    grid-column: 2;
+    grid-row: 1;
+ }
+ .twocol > input:nth-child(4){
+    grid-column: 2;
+    grid-row: 1;
+ }
+ #signupform{
+   opacity: 0;
+  animation: appear2 0.4s forwards ease-out;
+}
+@keyframes appear2 {
+  to{
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+
+ [data-userMessage]{
+     padding: 5rem;
+     position: absolute;
+     top: 60%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: white;
+     width: 40vw;
+     height: auto;
+     z-index: 100;
+     opacity: 0;
+     text-align: center;
+     font-size: 2rem;
+     font-weight: 800;
+     animation: appear 0.2s forwards ease-out;
+     border: black;
+     border-width: 1px;
+     border-style: solid;
+ }
+ @keyframes appear {
+     to{
+         opacity: 1;
+         top: 50%;
+     }
+ }
+ form fieldset [data-labelInside]{
+   background-color: white;
+   transform: translateY(40%);
+   margin: 0;
+   padding: 0;
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
+   margin-left: 0.5rem;
+   width: fit-content;
+   height: fit-content;
+ }
+
+ @media screen and (max-width: 800px) {
+   #signupform{
+     width: 95vw;
+     left: 0;
+     top: 0;
+     margin-left: 2.5vw;
+     margin-right: 2.5vw;
+   }
+  fieldset{
+    border-style: none;
+}
+.cechboxlist{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 2rem;
+}
+.center{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows:0.5fr 0.5fr;
+}
+.center > p{
+margin: 0;}
+.center > a{
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  grid-column: 2;}
+
+.twocol{
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 1fr;
+grid-column-gap: 1rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+}
+.twocol > label:first-child{
+   grid-column: 1;
+   grid-row: 1;
+}
+.twocol > input:nth-child(2){
+  grid-column: 1;
+  grid-row: 1;
+}
+.twocol > label:nth-child(3){
+  grid-column: 1;
+  grid-row: 2;
+}
+.twocol > input:nth-child(4){
+  grid-column: 1;
+  grid-row: 2;
+}
+}
+.count{
+  color: var(--highlight);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+a{
+  color: black;
+}
+.keywords{
+  margin-top: 2.5rem;
+}
+.keywords p:first-child{
+font-weight: bold;
+}
+
+[data-userMessage="accessDenied"]{
+  width: 100vw;
+  height: 50vh;
+  transform: translate(-50%);
+  bottom: 0;
+  padding-left: 35vw;
+  padding-right: 35vw;
+}
+[data-userMessage="accessDenied"] > p:nth-child(2){
+font-weight: 400;
+}
+[data-userMessage="accessDenied"] > button{
+  width: 20vw;
+  height: 5vh;
+  font-size: 1.5rem;
+  }
+
+  
+
+/*# sourceMappingURL=/main.af46ece4.css.map */

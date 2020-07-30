@@ -1,0 +1,524 @@
+/* This stylesheet is created for all devices responsive starting from - mobile version - 
+Check media queries for tablet and desktop versions :) */
+/*Global Styles */
+/* CSS Variables */
+:root {
+  --primary: transparent;
+  --dark: #0f3232;
+  --light: #000;
+  --shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+@font-face {
+  font-family: "GT-Walsheim";
+  src: url("fonts/GT-Walsheim-Pro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-family: "GT-Walsheim", sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 1.6rem;
+}
+img:not(.logo, .section-imgs) {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+}
+.logo {
+  width: 150px;
+  height: auto;
+  margin-right: -20px;
+}
+.DXC {
+  text-transform: uppercase;
+}
+section {
+  padding: 5rem 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/*header*/
+header {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.container {
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.nav-brand {
+  width: 2rem;
+}
+.menu-icons i {
+  font-size: 3.5rem;
+  color: #fafafa;
+  cursor: pointer;
+}
+.close i {
+  color: #000;
+}
+.nav-list {
+  width: 25rem;
+  height: 100vh;
+  background-color: #d7d4ed;
+  position: fixed;
+  top: 0;
+  right: -26rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  transition: all 650ms ease-in-out;
+}
+.nav-list.active {
+  right: 0;
+}
+.close {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+.nav-item {
+  margin: 1.5rem 0;
+}
+.nav-link {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
+}
+/*------hero section----*/
+.hero {
+  width: 100%;
+  
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("images/header-bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  filter: url("images/testimonials-bg.jpg");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray;
+}
+.hero:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  cursor: pointer;
+}
+.hero::before {
+  /* content: ""; */
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 4.7rem;
+  background: url("images/wave-small.png") center no-repeat;
+  background-size: cover;
+}
+
+.main-message {
+  width: 100%;
+  max-width: 50rem;
+  color: #fafafa;
+  text-transform: uppercase;
+}
+.main-message h3 {
+  font-size: 1.6rem;
+}
+.main-message h1 {
+  font-family: "GT-Walsheim", sans-serif;
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+.main-message p {
+  text-transform: lowercase;
+}
+.btn {
+  background-color: #f8e947; /*white*/
+  color: #000;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1.52rem 3rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: background-color 650ms;
+  border: transparent;
+  border-style: solid;
+  font-weight: 800;
+}
+.btn:hover {
+  background-color: transparent; /*yellow*/
+}
+.btn-yellowLine:hover{
+color: white;
+border: #f8e947;
+border-style: solid;
+}
+.btn-blackLine:hover{
+border: black;
+border-style: solid;
+}
+.btn-blackBackground{
+  border:white;
+  border-style: solid;
+background-color: white;
+}
+.btn-blackBackground:hover{
+  border: white;
+  border-style: solid;
+  color: #fff;
+}
+/*---case studies section---*/
+.experience-outdoors {
+  padding-top: 5rem;
+  height: fit-content;
+}
+.title-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+.title-heading h3 {
+  font-size: 1.4rem;
+}
+.title-heading h1 {
+  font-family: "GT-Walsheim", sans-serif;
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
+}
+.title-heading p {
+  text-transform: lowercase;
+}
+.casestudies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.5rem;
+}
+.casestudies-grid-item {
+  height: 40rem;
+  padding: 5rem;
+  color: #fafafa;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.casestudies-grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: -1;
+}
+.star-gazing {
+  background: url("images/stars.jpg") center no-repeat;
+}
+.hiking {
+  background: url("images/stars.jpg") center no-repeat;
+}
+.camping {
+  background: url("images/stars.jpg") center no-repeat;
+}
+.casestudies-grid-item i {
+  font-size: 4rem;
+  color: #f8e947; /*yellow*/
+}
+/*--------section3------*/
+.testimonials {
+  width: 100%;
+  height: 65vh;
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("images/testimonials-bg.jpg") center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  filter: url("images/testimonials-bg.jpg");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray;
+}
+.testimonials:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  cursor: pointer;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 4.7rem;
+  background: url("images/wave-small-reversed.png") center no-repeat;
+  background-size: cover;
+}
+.testimonial {
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+div.testimonial-customer {
+  margin-top: 10rem;
+}
+.testimonial-text-box {
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.testimonial-text-box i {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8rem;
+  color: #f8e947;
+  opacity: 0.5;
+  z-index: -1;
+}
+.testimonial-customer img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  border: 3px solid #f8e947;
+}
+/*--------Asset teaser ---------*/
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.adventure-grid-item p {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: left;
+}
+footer {
+  padding: 2.5rem 0;
+  background-color: #000;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+span.capital {
+  text-transform: uppercase;
+}
+
+h2.paragraph {
+  text-transform: none;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+.case-button {
+  text-align: center;
+  margin-bottom: 1rem;
+  
+}
+/*------asset page------*/
+
+.showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+a.home {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px;
+  color: #f8e947;
+  font-size: 1.7rem;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+a.home:hover {
+  color: #fff;
+}
+h1.author {
+  width: 500px;
+  margin: 0 auto;
+}
+/*----media queries---------*/
+
+@media screen and (min-width: 350px) {
+  .main-message {
+    transform: translateY(40%);
+  }
+}
+@media screen and (min-width: 470px) {
+  .hero::before {
+    height: fit-content;
+    background: url("images/wave-medium.png");
+    background-size: cover;
+  }
+  .testimonials::before {
+    height: 9.4rem;
+    background: url("images/wave-medium-reversed.png");
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 700px) {
+  header {
+    height: 8rem;
+  }
+  .nav-brand {
+    width: 3.5rem;
+  }
+  .nav-list {
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    position: initial;
+    right: initial;
+    flex-direction: row;
+    transition: initial;
+  }
+  .menu-icons {
+    display: none;
+  }
+  .nav-item {
+    margin: 0 2.5rem;
+  }
+  .nav-link,
+  .current {
+    color: #fff;
+    position: relative;
+    font-size: 1.3rem;
+  }
+  .nav-link::before,
+  .current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    background-color: #f8e947;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 650ms;
+  }
+  .current::before {
+    transform: scaleX(1);
+  }
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+  .hero {
+    height: fit-content;
+  }
+  .main-message {
+    transform: translateY(20%);
+  }
+  .title-heading h1 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 950px) {
+  .hero::before {
+    height: fit-content;
+    height: 10rem;
+    background: url("images/wave-large.png");
+    background-size: cover;
+  }
+  .testimonials::before {
+    height: 22.7rem;
+    background: url("images/wave-large-reversed.png");
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    height: fit-content;
+  }
+}
+.begin-adventure{
+  background-color: black;
+  height: 60vh;
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+}
+.begin-adventure .title-heading, h3, p, div{
+  color: white;
+}
+.begin-adventure .title-heading, h3{
+  color: white;
+}
+.begin-adventure .adventure-grid-item > p {
+  color: white
+}
+.slider-services h3{
+ font-size: 3rem;
+}
+.strategic-alignment p, .Business-process p, .Operating-model p, .Capability-uplift p, .End-to-end p {
+  color: black;
+}
